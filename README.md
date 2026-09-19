@@ -1,472 +1,144 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Movie Collection iOS 26</title>
+<title>Movie Collection - MKV</title>
 
 <style>
-
-* {
-    box-sizing:border-box;
-}
-
 body {
-    margin:0;
-    font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "Hiragino Sans",
-    sans-serif;
-
-    background:
-    linear-gradient(
-    180deg,
-    #000,
-    #111827
-    );
-
-    color:white;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    margin: 0;
 }
 
-
-/* iOS Header */
-
-.header {
-
-    position:sticky;
-    top:0;
-
-    padding:20px;
-
-    backdrop-filter:
-    blur(20px);
-
-    background:
-    rgba(20,20,25,.75);
-
-    z-index:10;
-
+header {
+    background: #222;
+    padding: 20px;
+    text-align: center;
 }
 
-
-.header h1 {
-
-    font-size:32px;
-    margin:0 0 15px;
-
+input {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
 }
 
-
-/* Search */
-
-.search {
-
-    width:100%;
-
-    padding:15px 20px;
-
-    border-radius:18px;
-
-    border:none;
-
-    outline:none;
-
-    font-size:17px;
-
-    background:
-    rgba(255,255,255,.15);
-
-    color:white;
-
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 20px;
+    padding: 20px;
 }
-
-
-/* Filters */
-
-.filters {
-
-    display:flex;
-
-    gap:10px;
-
-    padding:15px;
-
-    overflow:auto;
-
-}
-
-
-.filter {
-
-    background:
-    rgba(255,255,255,.15);
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    white-space:nowrap;
-
-}
-
-
-.filter.active {
-
-    background:#007aff;
-
-}
-
-
-
-/* Movie Grid */
-
-.collection {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fill,minmax(160px,1fr));
-
-    gap:18px;
-
-    padding:20px;
-
-}
-
-
-
-/* Movie Card */
 
 .movie {
-
-    background:
-    rgba(255,255,255,.12);
-
-    border-radius:22px;
-
-    padding:10px;
-
-    backdrop-filter:
-    blur(20px);
-
-    transition:.3s;
-
+    background: #222;
+    border-radius: 10px;
+    padding: 15px;
 }
 
-
-.movie:hover {
-
-    transform:scale(1.04);
-
+.movie img {
+    width: 100%;
+    border-radius: 8px;
 }
 
-
-.poster {
-
-    width:100%;
-
-    aspect-ratio:
-    2/3;
-
-    object-fit:cover;
-
-    border-radius:18px;
-
+.movie h3 {
+    margin: 10px 0;
 }
 
-
-.title {
-
-    margin-top:10px;
-
-    font-size:17px;
-
-    font-weight:600;
-
+.tag {
+    color: #00ff99;
 }
 
-
-.info {
-
-    color:#aaa;
-
-    font-size:13px;
-
-    line-height:1.5;
-
+a {
+    color: white;
+    text-decoration: none;
 }
-
-
-
-.play {
-
-    margin-top:10px;
-
-    width:100%;
-
-    border:0;
-
-    padding:10px;
-
-    border-radius:14px;
-
-    background:#007aff;
-
-    color:white;
-
-    font-size:15px;
-
-}
-
-
-
-/* Bottom iOS bar */
-
-.bottom {
-
-    position:fixed;
-
-    bottom:0;
-
-    width:100%;
-
-    padding:15px;
-
-    text-align:center;
-
-    background:
-    rgba(20,20,20,.75);
-
-    backdrop-filter:
-    blur(20px);
-
-}
-
 </style>
 
 </head>
 
-
 <body>
 
+<header>
+<h1>Movie Collection</h1>
 
-<div class="header">
+<input 
+type="text" 
+id="search" 
+placeholder="Search movie..."
+onkeyup="searchMovies()">
 
-<h1>
-🎬 映画コレクション
-</h1>
-
-
-<input
-class="search"
-id="search"
-placeholder="映画を検索..."
-onkeyup="searchMovie()">
+</header>
 
 
-</div>
-
-
-
-<div class="filters">
-
-<div class="filter active">
-すべて
-</div>
-
-<div class="filter">
-日本語
-</div>
-
-<div class="filter">
-MKV
-</div>
-
-<div class="filter">
-アニメ
-</div>
-
-<div class="filter">
-映画
-</div>
-
-</div>
-
-
-
-
-<div class="collection"
-id="movies">
-
+<div class="container" id="movieList">
 
 
 <div class="movie">
-
-
-<img class="poster"
-src="images/totoro.jpg">
-
-
-<div class="title">
-となりのトトロ
+<img src="poster1.jpg">
+<h3>Movie Title 1</h3>
+<p class="tag">Format: MKV</p>
+<a href="movies/movie1.mkv">Open MKV</a>
 </div>
-
-
-<div class="info">
-
-日本語<br>
-MKV<br>
-1988
-
-</div>
-
-
-<button class="play">
-▶ 再生
-</button>
-
-
-</div>
-
-
 
 
 <div class="movie">
-
-
-<img class="poster"
-src="images/chihiro.jpg">
-
-
-<div class="title">
-千と千尋の神隠し
+<img src="poster2.jpg">
+<h3>Movie Title 2</h3>
+<p class="tag">Format: MKV</p>
+<a href="movies/movie2.mkv">Open MKV</a>
 </div>
-
-
-<div class="info">
-
-日本語<br>
-MKV<br>
-2001
-
-</div>
-
-
-<button class="play">
-▶ 再生
-</button>
-
-
-</div>
-
-
-
 
 
 <div class="movie">
-
-
-<img class="poster"
-src="images/kiki.jpg">
-
-
-<div class="title">
-魔女の宅急便
+<img src="poster3.jpg">
+<h3>Movie Title 3</h3>
+<p class="tag">Format: MKV</p>
+<a href="movies/movie3.mkv">Open MKV</a>
 </div>
 
 
-<div class="info">
-
-日本語<br>
-MKV<br>
-1989
-
 </div>
-
-
-<button class="play">
-▶ 再生
-</button>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-<div class="bottom">
-
-🍿 Movie Library • iOS 26 Style
-
-</div>
-
 
 
 <script>
 
+function searchMovies(){
 
-function searchMovie(){
-
-let text =
-document
+let input = document
 .getElementById("search")
 .value
 .toLowerCase();
 
 
-let movies =
-document
+let movies = document
 .getElementsByClassName("movie");
 
 
+for(let i=0;i<movies.length;i++){
 
-for(
-let i=0;
-i<movies.length;
-i++
-){
-
-
-let title =
-movies[i]
-.querySelector(".title")
-.innerText
+let title = movies[i]
+.querySelector("h3")
+.textContent
 .toLowerCase();
 
 
-
-if(
-title.includes(text)
-){
-
-movies[i]
-.style.display="block";
-
+if(title.includes(input)){
+movies[i].style.display="block";
 }
-
 else{
-
-movies[i]
-.style.display="none";
-
-}
-
-
+movies[i].style.display="none";
 }
 
 }
 
-
+}
 
 </script>
-
 
 </body>
 </html>
