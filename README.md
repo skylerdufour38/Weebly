@@ -1,70 +1,472 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Cinderella - Multilingual MP4 Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Movie Collection iOS 26</title>
+
+<style>
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    margin:0;
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Hiragino Sans",
+    sans-serif;
+
+    background:
+    linear-gradient(
+    180deg,
+    #000,
+    #111827
+    );
+
+    color:white;
+}
+
+
+/* iOS Header */
+
+.header {
+
+    position:sticky;
+    top:0;
+
+    padding:20px;
+
+    backdrop-filter:
+    blur(20px);
+
+    background:
+    rgba(20,20,25,.75);
+
+    z-index:10;
+
+}
+
+
+.header h1 {
+
+    font-size:32px;
+    margin:0 0 15px;
+
+}
+
+
+/* Search */
+
+.search {
+
+    width:100%;
+
+    padding:15px 20px;
+
+    border-radius:18px;
+
+    border:none;
+
+    outline:none;
+
+    font-size:17px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    color:white;
+
+}
+
+
+/* Filters */
+
+.filters {
+
+    display:flex;
+
+    gap:10px;
+
+    padding:15px;
+
+    overflow:auto;
+
+}
+
+
+.filter {
+
+    background:
+    rgba(255,255,255,.15);
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    white-space:nowrap;
+
+}
+
+
+.filter.active {
+
+    background:#007aff;
+
+}
+
+
+
+/* Movie Grid */
+
+.collection {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(160px,1fr));
+
+    gap:18px;
+
+    padding:20px;
+
+}
+
+
+
+/* Movie Card */
+
+.movie {
+
+    background:
+    rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    padding:10px;
+
+    backdrop-filter:
+    blur(20px);
+
+    transition:.3s;
+
+}
+
+
+.movie:hover {
+
+    transform:scale(1.04);
+
+}
+
+
+.poster {
+
+    width:100%;
+
+    aspect-ratio:
+    2/3;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+}
+
+
+.title {
+
+    margin-top:10px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+
+.info {
+
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+}
+
+
+
+.play {
+
+    margin-top:10px;
+
+    width:100%;
+
+    border:0;
+
+    padding:10px;
+
+    border-radius:14px;
+
+    background:#007aff;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+
+
+/* Bottom iOS bar */
+
+.bottom {
+
+    position:fixed;
+
+    bottom:0;
+
+    width:100%;
+
+    padding:15px;
+
+    text-align:center;
+
+    background:
+    rgba(20,20,20,.75);
+
+    backdrop-filter:
+    blur(20px);
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<h1>Cinderella (Multilingual MP4 Collection)</h1>
 
-<p>
-Source Page:
-<a href="https://youngtoddesdubcollection.weebly.com/cinderella.html">
-Cinderella Collection
-</a>
-</p>
+<div class="header">
 
-<h2>Available Languages</h2>
+<h1>
+🎬 映画コレクション
+</h1>
 
-<ul>
-<li>Albanian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Arabic: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Bengali: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Bulgarian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Cantonese: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Croatian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Czech: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Danish: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Dutch: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Finnish: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>French: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>German: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Greek: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Hebrew: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Hindi: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Hmong: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Hungarian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Icelandic: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Indonesian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Italian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Japanese: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Kazakh: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Khmer: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Korean: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Kurdish: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Malay: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Mandarin Chinese: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Mizo: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Norwegian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Persian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Polish: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Portuguese: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Romanian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Russian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Serbian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Slovak: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Spanish: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Swedish: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Tamil: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Teochew: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Thai: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Turkish: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Ukrainian: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Uyghur: <a href="#">MP4 Download (Mega.nz)</a></li>
-<li>Vietnamese: <a href="#">MP4 Download (Mega.nz)</a></li>
-</ul>
+
+<input
+class="search"
+id="search"
+placeholder="映画を検索..."
+onkeyup="searchMovie()">
+
+
+</div>
+
+
+
+<div class="filters">
+
+<div class="filter active">
+すべて
+</div>
+
+<div class="filter">
+日本語
+</div>
+
+<div class="filter">
+MKV
+</div>
+
+<div class="filter">
+アニメ
+</div>
+
+<div class="filter">
+映画
+</div>
+
+</div>
+
+
+
+
+<div class="collection"
+id="movies">
+
+
+
+<div class="movie">
+
+
+<img class="poster"
+src="images/totoro.jpg">
+
+
+<div class="title">
+となりのトトロ
+</div>
+
+
+<div class="info">
+
+日本語<br>
+MKV<br>
+1988
+
+</div>
+
+
+<button class="play">
+▶ 再生
+</button>
+
+
+</div>
+
+
+
+
+<div class="movie">
+
+
+<img class="poster"
+src="images/chihiro.jpg">
+
+
+<div class="title">
+千と千尋の神隠し
+</div>
+
+
+<div class="info">
+
+日本語<br>
+MKV<br>
+2001
+
+</div>
+
+
+<button class="play">
+▶ 再生
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="movie">
+
+
+<img class="poster"
+src="images/kiki.jpg">
+
+
+<div class="title">
+魔女の宅急便
+</div>
+
+
+<div class="info">
+
+日本語<br>
+MKV<br>
+1989
+
+</div>
+
+
+<button class="play">
+▶ 再生
+</button>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="bottom">
+
+🍿 Movie Library • iOS 26 Style
+
+</div>
+
+
+
+<script>
+
+
+function searchMovie(){
+
+let text =
+document
+.getElementById("search")
+.value
+.toLowerCase();
+
+
+let movies =
+document
+.getElementsByClassName("movie");
+
+
+
+for(
+let i=0;
+i<movies.length;
+i++
+){
+
+
+let title =
+movies[i]
+.querySelector(".title")
+.innerText
+.toLowerCase();
+
+
+
+if(
+title.includes(text)
+){
+
+movies[i]
+.style.display="block";
+
+}
+
+else{
+
+movies[i]
+.style.display="none";
+
+}
+
+
+}
+
+}
+
+
+
+</script>
+
 
 </body>
 </html>
