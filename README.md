@@ -40,3 +40,13 @@ Mega.nz
 ---
 
 ## Project Structure
+
+Eigo-Fuda-Video-Web-App/
+│
+├── index.html
+├── style.css
+├── app.js
+├── README.md
+│
+└── videos/
+└── Eigo_Fuda_Otakara_John_Tasukete.mp4
