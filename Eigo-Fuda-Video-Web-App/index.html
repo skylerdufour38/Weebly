@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Eigo Fuda Video Web App - HTML5 video player for GitHub Pages and GitHub Codespaces."
+    />
+    <title>Eigo Fuda Video Web App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <p class="eyebrow">GitHub Pages • Codespaces Ready</p>
+        <h1>Eigo Fuda Video Web App</h1>
+      </header>
+
+      <section class="video-card" aria-label="Video player section">
+        <div class="video-wrapper">
+          <video
+            id="videoPlayer"
+            controls
+            playsinline
+            preload="metadata"
+            poster=""
+            aria-label="Eigo Fuda video"
+          >
+            <source src="videos/Eigo_Fuda_Otakara_John_Tasukete.mp4" type="video/mp4" />
+            Your browser does not support the HTML5 video tag.
+          </video>
+          <div id="videoNotice" class="video-notice hidden" role="status" aria-live="polite">
+            The video file was not found in the videos folder. Add the MP4 file to continue playback.
+          </div>
+        </div>
+
+        <div class="meta-panel">
+          <div>
+            <p class="label">Title</p>
+            <h2>Eigo Fuda Otakara - John Tasukete</h2>
+          </div>
+
+          <ul class="details">
+            <li><span>Duration</span><strong>1:15</strong></li>
+            <li><span>Format</span><strong>MP4</strong></li>
+            <li><span>Source</span><strong>Local / GitHub Pages</strong></li>
+          </ul>
+
+          <div class="actions">
+            <button id="playButton" type="button">Play Video</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
